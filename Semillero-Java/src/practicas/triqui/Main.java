@@ -1,5 +1,3 @@
-package practica12;
-
 import java.util.Scanner;
 
 public class Main {
