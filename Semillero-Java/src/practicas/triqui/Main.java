@@ -1,35 +1,33 @@
+package practica12;
+
 import java.util.Scanner;
 
 public class Main {
     static Scanner sc = new Scanner(System.in);
-    static int num1;
-    static int num2 = 0;
+    static float num;
 
     static void pedirNumero() {
         try {
-            System.out.print("Ingrese el dividiendo: ");
-            num1 = Integer.parseInt(sc.nextLine());
-            do {
-                System.out.print("Ingrese el divisor: ");
-                num2 = Integer.parseInt(sc.nextLine());
-            } while (num2 == 0);
-
+            System.out.print("Ingrese numero : ");
+            num = Float.parseFloat(sc.nextLine());
         } catch (Exception e) {
             pedirNumero();
         }
     }
 
-    static public int division(int n, int num1, int num2) {
-        if (n * num2 < num1) {
-            return division(n + 1, num1, num2);
+    static void verificarNum(){
+        float division=num/2;
+        if (division==(int)num/2) {
+            System.out.println("Numero par");
         }
-        return (n * num2 == num1) ? n : n - 1;
+        else{
+            System.out.println("Numero impar");
+        }
     }
 
     public static void main(String[] args) {
         pedirNumero();
-        int parteEntera = division(1, num1, num2);
-        int parteDecimal = division(1, (num1 % num2) * 10, num2);
-        System.out.println("Resultado: " + parteEntera + "," + parteDecimal);
+        verificarNum();
+       
     }
 }
